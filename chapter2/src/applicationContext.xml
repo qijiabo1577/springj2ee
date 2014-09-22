@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
  		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
  		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
- 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+ 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+ 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+ 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+ 		"
+ 		>
  		
  	<!-- 扫描类包，将spring注解的类自动转化为Bean，同时完成Bean的注入 -->
  	<context:component-scan base-package="com.baobaotao.dao"/>
+ 	<context:component-scan base-package="com.baobaotao.service"/>
  	
  	<!-- 定义使用  DBCP实现的数据源 -->
  	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -23,18 +31,28 @@
  		/>
  		
  	<!--定义Jdbc模板  -->
- 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"/
+ 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" 
  		p:dataSource-ref="dataSource"/>
  	
  	<!-- 通过aop配置提供事务增强，让service包下所有的bean方法都拥有事务 -->
  	<aop:config proxy-target-class="true">
  		<aop:pointcut id="serviceMethod"
- 			expression="execution(*com.baobaotao.service..*(..))"/>
+ 			expression=" execution(* com.baobaotao.service..*(..)) "/>
  		<aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice"/>
  	</aop:config>
+ 	
  	<tx:advice id="txAdvice" transaction-manager="transactionManager">
  		<tx:attributes>
  			<tx:method name="*"/>
  		</tx:attributes>
  	</tx:advice>
+ 	
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+    <property name="dataSource">  
+      <ref local="dataSource"/>  
+    </property>  
+  </bean>  
+
+ 	
+ 	
 </beans>

@@ -4,23 +4,26 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class LoginLog implements Serializable{
-	private int loginLogId;
-	private int userId;//用户Id
+	private static final long serialVersionUID = 1L;
+	private String loginLogId;
+	private String userId;//用户Id
 	private String ip;//ip
 	private Date loginDate;//登录日期
 	
 	
+	
 	//------------------------------------------
-	public int getLoginLogId() {
+	
+	public String getLoginLogId() {
 		return loginLogId;
 	}
-	public void setLoginLogId(int loginLogId) {
+	public void setLoginLogId(String loginLogId) {
 		this.loginLogId = loginLogId;
 	}
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public String getIp() {
@@ -35,4 +38,6 @@ public class LoginLog implements Serializable{
 	public void setLoginDate(Date loginDate) {
 		this.loginDate = loginDate;
 	}
+	
+
 }

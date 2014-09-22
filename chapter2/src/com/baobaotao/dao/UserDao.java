@@ -38,9 +38,9 @@ public class UserDao {
 		jdbcTemplate.query(sqlStr, new Object[]{userName},
 				new RowCallbackHandler(){
 			public void processRow(ResultSet rs) throws SQLException{
-				user.setUserId(rs.getInt("user_id"));
+				user.setUserId(rs.getString("user_id"));
 				user.setUserName(userName);
-				user.setCredits(rs.getInt("credits"));
+				user.setCredits(rs.getString("credits"));
 			}
 		});
 		return user;

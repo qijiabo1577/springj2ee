@@ -4,19 +4,22 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class User implements Serializable{
-	private int userId;//用户Id
+	private static final long serialVersionUID = 1L;
+	private String userId;//用户Id
 	private String userName;//用户名
 	private String password;//密码
-	private int credits;//身份证号
+	private String credits;//身份证号
 	private String lastIp;//上次登录ip
 	private Date lastVisit;//上次登录日期
 	
 	
+	
+
 	//-------------------------------------
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {
@@ -31,10 +34,10 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getCredits() {
+	public String getCredits() {
 		return credits;
 	}
-	public void setCredits(int credits) {
+	public void setCredits(String credits) {
 		this.credits = credits;
 	}
 	public String getLastIp() {
@@ -49,4 +52,5 @@ public class User implements Serializable{
 	public void setLastVisit(Date lastVisit) {
 		this.lastVisit = lastVisit;
 	}
+	
 }
