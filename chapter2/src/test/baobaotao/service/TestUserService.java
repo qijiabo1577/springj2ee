@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.baobaotao.domain.User;
 import com.baobaotao.service.UserService;
-import org.springframework.test
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJunit4ClassRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class TestUserService extends TestCase {
 	@Autowired
 	private UserService userService;
