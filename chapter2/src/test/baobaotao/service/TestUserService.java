@@ -3,7 +3,6 @@ package test.baobaotao.service;
 import java.util.Date;
 
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
