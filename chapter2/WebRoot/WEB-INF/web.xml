@@ -27,13 +27,14 @@
 			org.springframework.web.servlet.DispatcherServlet
 		</servlet-class>
 		<load-on-startup>2</load-on-startup>
-		
-		<!-- spring MVC处理的URL -->
-		<servlet-mapping>
-			<servlet-name>baobaotao</servlet-name>
-			<url-pattern>*.html</url-pattern>
-		</servlet-mapping>
 	</servlet>
+
+	<!-- spring MVC处理的URL -->
+	<servlet-mapping>
+		<servlet-name>baobaotao</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+	
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
