@@ -25,6 +25,7 @@ public class UserService {
 		return userDao.findUserByUserName(userName);
 	}
 	
+	//登录成功执行操作
 	public void loginSuccess(User user ){
 		user.setCredits(5+user.getCredits());
 		LoginLog loginLog=new LoginLog();

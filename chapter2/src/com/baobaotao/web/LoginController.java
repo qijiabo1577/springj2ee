@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.baobaotao.domain.BBTError;
 import com.baobaotao.domain.User;
 import com.baobaotao.service.UserService;
 
@@ -17,10 +18,18 @@ import com.baobaotao.service.UserService;
 public class LoginController {
 	@Autowired
 	private UserService userService;
-	
+	@Autowired
+	private BBTError error;
+
 	//处理index.html请求
 	@RequestMapping(value="/index.html")
 	public String loginPage(){
+		return "login";
+	}
+	
+	//处理index.html请求
+	@RequestMapping(value="/")
+	public String loginPage_empty(){
 		return "login";
 	}
 	
@@ -30,14 +39,17 @@ public class LoginController {
 		boolean isValidUser=
 			userService.hasMatchUser(loginCommand.getUserName(), loginCommand.getPassword());
 		if(!isValidUser){
-			return new ModelAndView("login","error","用户名或密码错误");
+			error.setText("用户名或密码错误");
+			return new ModelAndView("login","error",error);
 		}else{
 			User user=userService.findUserByUserName(loginCommand.getUserName());
 			user.setLastIp(request.getRemoteAddr());
 			user.setLastVisit(new Date());
+			//登录成功插入日志表
 			userService.loginSuccess(user);
 			request.getSession().setAttribute("user", user);
 		}
+		//等于  return "main";
 		return new ModelAndView("main");
 	}
 	
@@ -47,9 +59,15 @@ public class LoginController {
 	public UserService getUserService() {
 		return userService;
 	}
-
-
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+
+	public BBTError getError() {
+		return error;
+	}
+
+	public void setError(BBTError error) {
+		this.error = error;
 	}
 }

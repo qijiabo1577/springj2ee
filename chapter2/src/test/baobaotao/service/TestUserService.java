@@ -1,6 +1,9 @@
 package test.baobaotao.service;
 
+import java.util.Date;
+
 import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +21,10 @@ public class TestUserService extends TestCase {
 	@Autowired
 	private UserService userService;
 	
+	public TestUserService(String name){
+		super(name);
+	}
+	
 	@Test
 	public void hasMatchUser(){
 		boolean b1=userService.hasMatchUser("admin", "123456");
@@ -31,4 +38,13 @@ public class TestUserService extends TestCase {
 		User user=userService.findUserByUserName("admin");
 		assertEquals(user.getUserName(), "admin");
 	}
+	
+	@Test 
+	public void loginSuccess(){
+		User user=userService.findUserByUserName("admin");
+		user.setLastVisit(new Date());
+		user.setLastIp("11.11.11.11");
+		userService.loginSuccess(user);
+	}
+	
 }

@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<c:if test="${!empty error}">
-			<font color="red"><c:out value="${error}"/></font>
+			<font color="red"><c:out value="${error.text}"/></font>
 		</c:if>
 		<form action="<c:url value='/loginCheck.html'/>" method="post">
 			用户名：
