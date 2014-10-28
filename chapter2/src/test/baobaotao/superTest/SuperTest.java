@@ -7,7 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.baobaotao.dao.LoginLogDao;
 import com.baobaotao.dao.UserDao;
-import com.baobaotao.service.UserService;
 
 public class SuperTest extends TestCase{
 	private BeanFactory beanFactory;
@@ -35,6 +34,10 @@ public class SuperTest extends TestCase{
 	
 	protected UserService userService=(UserService) getEntity("userService");
 	*/
+	
+	/**
+	 * 构造方法  用于TestFinder  找到具体的测试用例
+	 */
 	public SuperTest (String method){
 		super(method);
 	}

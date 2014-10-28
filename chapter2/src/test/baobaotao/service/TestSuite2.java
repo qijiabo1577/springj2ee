@@ -23,8 +23,6 @@ public class TestSuite2 extends SuperTest{
 	public static TestSuite suite(){
 		TestSuite suite=new TestSuite();
 		suite.addTestSuite(TestUserService_superTest.class);
-		suite.addTest(new TestSuite2("testAdd"));
-		suite.addTest(new TestSuite1("testUserDao"));
 		return  suite;
 	}
 }

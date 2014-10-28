@@ -27,8 +27,7 @@ public class TestSuite1 extends SuperTest{
 	}
 	
 	public static void main(String[] args){
-		TestFinder.run(TestSuite2.class, args);
-		TestFinder.run(TestUserService_superTest.class, new String[]{"testHasMatchUser"});
-		TestFinder.run(TestUserService.class,  new String[]{"hasMatchUser"});
+		TestFinder.run(TestSuite1.class, args);
+		TestFinder.run(TestSuite1.class,  new String[]{"testUserDao"});
 	}
 }
