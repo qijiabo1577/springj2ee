@@ -27,12 +27,14 @@ public class SuperTest extends TestCase{
 	 */
 	protected LoginLogDao loginLogDao=(LoginLogDao) getEntity("loginLogDao");
 	
+	
 	/**
 	 * userService
 	 * @param method
-	 */
+	 
 	
 	protected UserService userService=(UserService) getEntity("userService");
+	*/
 	public SuperTest (String method){
 		super(method);
 	}
