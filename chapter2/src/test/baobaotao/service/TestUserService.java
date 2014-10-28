@@ -1,5 +1,7 @@
 package test.baobaotao.service;
 
+import static org.junit.Assert.*;
+
 import java.util.Date;
 
 import junit.framework.TestCase;
@@ -16,13 +18,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)//基于junit的spring测试框架
 @ContextConfiguration(locations={"/applicationContext.xml"})//启动Spring容器
-public class TestUserService extends TestCase {
+public class TestUserService {
 	@Autowired
 	private UserService userService;
 	
-	public TestUserService(String name){
-		super(name);
-	}
 	
 	@Test
 	public void hasMatchUser(){

@@ -14,7 +14,7 @@ public class TestSuite2 extends SuperTest{
 	}
 	
 	public void testSub(){
-		assertEquals(0,1-1);
+		assertEquals(0,1+1);
 	}
 	
 	
