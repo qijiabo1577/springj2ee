@@ -1,5 +1,6 @@
 package test.baobaotao.service;
 
+import test.baobaotao.MockTest.TestEasyMock;
 import test.baobaotao.superTest.SuperTest;
 import test.baobaotao.superTest.TestFinder;
 
@@ -26,8 +27,12 @@ public class TestSuite1 extends SuperTest{
 		assertEquals(user.getUserId(),"4028810145ee3acf0145ee4390eb0004");
 	}
 	
+	/**
+	 * 用TestFinder的方式整体测试
+	 * @param args
+	 */
 	public static void main(String[] args){
-		TestFinder.run(TestSuite1.class, args);
-		TestFinder.run(TestSuite1.class,  new String[]{"testUserDao"});
+		//TestFinder.run(testUserServiceInEasyMock.class, args);
+		TestFinder.run(TestEasyMock.class,  new String[]{"testUserServiceInEasyMock"});
 	}
 }

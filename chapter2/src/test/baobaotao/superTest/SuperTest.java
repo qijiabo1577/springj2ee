@@ -9,8 +9,10 @@ import com.baobaotao.dao.LoginLogDao;
 import com.baobaotao.dao.UserDao;
 
 public class SuperTest extends TestCase{
+	/**
+	 * 加载spring配置文件，用来获取对象
+	 */
 	private BeanFactory beanFactory;
-	
 	protected  Object getEntity(String daoName) {  
 		beanFactory = new ClassPathXmlApplicationContext("/applicationContext.xml");  
 		return beanFactory.getBean(daoName);  
@@ -26,14 +28,6 @@ public class SuperTest extends TestCase{
 	 */
 	protected LoginLogDao loginLogDao=(LoginLogDao) getEntity("loginLogDao");
 	
-	
-	/**
-	 * userService
-	 * @param method
-	 
-	
-	protected UserService userService=(UserService) getEntity("userService");
-	*/
 	
 	/**
 	 * 构造方法  用于TestFinder  找到具体的测试用例

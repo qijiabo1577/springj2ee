@@ -21,6 +21,9 @@ public class TestEasyMock extends SuperTest{
 		mockuserService=(UserService) userService_con.getMock();
 	}
 	
+	/**
+	 * 使用easymock进行测试
+	 */
 	public void testUserServiceInEasyMock(){
 		
 		User tmpUser=new User();

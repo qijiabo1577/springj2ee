@@ -2,6 +2,8 @@ package test.baobaotao.service;
 
 import java.util.Date;
 import com.baobaotao.domain.User;
+import com.baobaotao.service.UserService;
+
 import test.baobaotao.superTest.SuperTest;
 
 public class TestUserService_superTest extends SuperTest {
@@ -9,7 +11,9 @@ public class TestUserService_superTest extends SuperTest {
 	public TestUserService_superTest(String method) {
 		super(method);
 	}
-	/**
+	
+	protected UserService userService=(UserService) getEntity("userService");
+	
 	public void testHasMatchUser(){
 		boolean b1=userService.hasMatchUser("admin", "123456");
 		boolean b2=userService.hasMatchUser("admin", "1111");
@@ -27,6 +31,7 @@ public class TestUserService_superTest extends SuperTest {
 		user.setLastVisit(new Date());
 		user.setLastIp("11.11.11.11");
 		userService.loginSuccess(user);
-	}**/
+	}
+	
 	
 }
