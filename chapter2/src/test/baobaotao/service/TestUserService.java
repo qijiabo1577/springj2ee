@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.baobaotao.domain.User;
-import com.baobaotao.service.UserService;
+import com.baobaotao.service.UserService2;
 
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations={"/applicationContext.xml"})//Æô¶¯SpringÈÝÆ÷
 public class TestUserService {
 	@Autowired
-	private UserService userService;
+	private UserService2 userService;
 	
 	
 	@Test

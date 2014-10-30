@@ -2,7 +2,7 @@ package test.baobaotao.service;
 
 import java.util.Date;
 import com.baobaotao.domain.User;
-import com.baobaotao.service.UserService;
+import com.baobaotao.service.UserService2;
 
 import test.baobaotao.superTest.SuperTest;
 
@@ -12,7 +12,7 @@ public class TestUserService_superTest extends SuperTest {
 		super(method);
 	}
 	
-	protected UserService userService=(UserService) getEntity("userService");
+	protected UserService2 userService=(UserService2) getEntity("userService");
 	
 	public void testHasMatchUser(){
 		boolean b1=userService.hasMatchUser("admin", "123456");

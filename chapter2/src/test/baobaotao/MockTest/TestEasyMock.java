@@ -3,7 +3,7 @@ package test.baobaotao.MockTest;
 import org.easymock.MockControl;
 
 import com.baobaotao.domain.User;
-import com.baobaotao.service.UserService;
+import com.baobaotao.service.UserService2;
 
 import test.baobaotao.superTest.SuperTest;
 
@@ -13,12 +13,12 @@ public class TestEasyMock extends SuperTest{
 		super(method);
 	}
 	
-	private UserService mockuserService;
+	private UserService2 mockuserService;
 	private MockControl userService_con;
 	
 	public void setUp(){
-		userService_con=MockControl.createControl(UserService.class);
-		mockuserService=(UserService) userService_con.getMock();
+		userService_con=MockControl.createControl(UserService2.class);
+		mockuserService=(UserService2) userService_con.getMock();
 	}
 	
 	/**

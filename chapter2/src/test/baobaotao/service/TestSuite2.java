@@ -25,4 +25,5 @@ public class TestSuite2 extends SuperTest{
 		suite.addTestSuite(TestUserService_superTest.class);
 		return  suite;
 	}
+	
 }

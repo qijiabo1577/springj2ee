@@ -5,6 +5,7 @@
 		<title>宝宝淘论坛登录</title>
 	</head>
 	<body>
-		欢迎登录  宝宝淘论坛主页
+		你好~<font color="red"><c:out value="${user.userName}"/></font>。欢迎登陆~<br>
+		积分：<c:out value="${user.credits}"/>
 	</body>
 </html>
