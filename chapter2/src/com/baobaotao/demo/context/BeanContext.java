@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.baobaotao.reflect.Car;
 
 /**
- * 以注解的方式配置javabean
+ * 以java类的方式定义javabean
  * 
  * @author Administrator
  *

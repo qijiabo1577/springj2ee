@@ -1,5 +1,8 @@
 package com.baobaotao.domain;
 
+import org.hibernate.annotations.Entity;
+
+@Entity
 public class Board extends BaseDomain{
 	/**
 	 * 
