@@ -10,7 +10,9 @@ import com.baobaotao.dao.UserDao;
 
 public class SuperTest extends TestCase{
 	/**
-	 * 加载spring配置文件，用来获取对象
+	 * 加载spring配置文件，用来获取对象  
+	 * 通过beanFactory启动Ioc容器时不会初始化对象，
+	 * 初始化对象只发生在第一次调用时
 	 */
 	private BeanFactory beanFactory;
 	protected  Object getEntity(String daoName) {  

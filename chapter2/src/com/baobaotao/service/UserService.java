@@ -10,7 +10,9 @@ import com.baobaotao.domain.LoginLog;
 import com.baobaotao.domain.User;
 @Service
 public class UserService{
-	@Autowired
+	//required 默认值为true  表示一定要找到匹配的bean 否则会报错
+	//					false  相反，不一定要找到这个bean
+	@Autowired(required=false)
 	private UserDao userDao;
 	
 	@Autowired

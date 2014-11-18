@@ -1,9 +1,11 @@
 package com.baobaotao.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable{
+public class User extends BaseDomain{
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	private String userId;//用户Id
 	private String userName;//用户名

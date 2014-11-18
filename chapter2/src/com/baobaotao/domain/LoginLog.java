@@ -1,9 +1,8 @@
 package com.baobaotao.domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class LoginLog implements Serializable{
+public class LoginLog extends BaseDomain{
 	private static final long serialVersionUID = 1L;
 	private String loginLogId;
 	private String userId;//ÓÃ»§Id
