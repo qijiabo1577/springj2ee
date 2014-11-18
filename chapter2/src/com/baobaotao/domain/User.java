@@ -1,6 +1,7 @@
 package com.baobaotao.domain;
 
 import java.util.Date;
+import java.util.Set;
 
 public class User extends BaseDomain{
 	/**
@@ -13,11 +14,25 @@ public class User extends BaseDomain{
 	private String credits;//身份证号
 	private String lastIp;//上次登录ip
 	private Date lastVisit;//上次登录日期
-	
+	private String userType;//用户类别
+	private Set mainBoards;//主要板块
 	
 	
 
+	
 	//-------------------------------------
+	public Set getMainBoards() {
+		return mainBoards;
+	}
+	public void setMainBoards(Set mainBoards) {
+		this.mainBoards = mainBoards;
+	}
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	public String getUserId() {
 		return userId;
 	}

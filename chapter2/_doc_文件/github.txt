@@ -1,1 +1,20 @@
 https://github.com/qijiabo/springj2ee.git
+
+
+spring Ioc实现过程：
+
+Resource	配置文件资源对象
+->	
+ResourceLoader	读取配置文件
+->	
+BeanDefinitionReader	解析配置文件
+将每个bean配置解析成BeanDefinition 存放在BeanDefinitionRegistry中
+->
+调用InstantiationStrategy从BeanDefinitionRegistry中取出BeanDefinition对Bean进行实例化
+->
+Spring使用BeanWrapper 对Bean进行封装（利用java反射机制）
+->
+利用容器中注册的Bean后处理器（实现BeanPostProcesser接口的bean）对已经完成设置的Bean进行后续处理
+
+
+
