@@ -60,7 +60,4 @@
       <ref local="dataSource"/>  
     </property>  
   </bean>  
-
- 	
- 	
 </beans>
