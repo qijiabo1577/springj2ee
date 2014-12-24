@@ -1,5 +1,4 @@
-package com.baobaotao.demo.httpGet;
-
+/**
 package com.baobaotao.demo.httpGet;
 
 import java.io.IOException;
@@ -25,6 +24,7 @@ import android.content.SharedPreferences;
  * @author lixueyi
  *
  */
+/**
 public class SendRequest {
     //向网络发送get请求,并且将请求到的数据进行解析，保存在sp文件中
     //这里使用一个数字进行标识，不同的表示代表调用不同的json解析方法
@@ -47,4 +47,4 @@ public class SendRequest {
          return arrayMap.list;
         
     }
-}
+}**/
