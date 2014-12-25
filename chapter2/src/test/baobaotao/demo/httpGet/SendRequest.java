@@ -1,3 +1,4 @@
+package test.baobaotao.demo.httpGet;
 /**
 package com.baobaotao.demo.httpGet;
 
@@ -20,14 +21,14 @@ import com.bobo.util.JsonHelper;
 import android.content.SharedPreferences;
 
 /**
- * Õâ¸öÀàÖ÷ÒªÓÃÓÚ·¢ËÍÍøÂçÇëÇó
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author lixueyi
  *
  */
 /**
 public class SendRequest {
-    //ÏòÍøÂç·¢ËÍgetÇëÇó,²¢ÇÒ½«ÇëÇóµ½µÄÊı¾İ½øĞĞ½âÎö£¬±£´æÔÚspÎÄ¼şÖĞ
-    //ÕâÀïÊ¹ÓÃÒ»¸öÊı×Ö½øĞĞ±êÊ¶£¬²»Í¬µÄ±íÊ¾´ú±íµ÷ÓÃ²»Í¬µÄjson½âÎö·½·¨
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ç·¢ï¿½ï¿½getï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ï¿½óµ½µï¿½ï¿½ï¿½İ½ï¿½ï¿½Ğ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½spï¿½Ä¼ï¿½ï¿½ï¿½
+    //ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ğ±ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½Í¬ï¿½Ä±ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½Í¬ï¿½ï¿½jsonï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public List<Map<String,Object>> sendGetRequest(String url,SharedPreferences sp,String key,int type){
         HttpGet get=new HttpGet(url);
         try {

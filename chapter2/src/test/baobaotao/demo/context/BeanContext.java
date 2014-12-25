@@ -1,4 +1,4 @@
-package com.baobaotao.demo.context;
+package test.baobaotao.demo.context;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.baobaotao.reflect.Car;
 
 /**
- * ÒÔjavaÀàµÄ·½Ê½¶¨Òåjavabean
+ * ï¿½ï¿½javaï¿½ï¿½Ä·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½javabean
  * 
  * @author Administrator
  *
@@ -14,14 +14,14 @@ import com.baobaotao.reflect.Car;
 @Configuration
 public class BeanContext {
 	/**
-	 * ¶¨ÒåÒ»¸öcar¶ÔÏó
+	 * ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½carï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	@Bean(name="car")
 	public Car buildCar(){
 		Car car=new Car();
-		car.setBrand("±¦Âí");
-		car.setColor("ºìÉ«");
+		car.setBrand("ï¿½ï¿½ï¿½ï¿½");
+		car.setColor("ï¿½ï¿½É«");
 		car.setMaxSpeed(200);
 		return car;
 	}

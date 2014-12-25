@@ -1,4 +1,4 @@
-package com.baobaotao.demo.event;
+package test.baobaotao.demo.event;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSendMail {
 	public static void main(String[] args) {
 		ApplicationContext aContext=new ClassPathXmlApplicationContext("com/baobaotao/demo/event/beans.xml");
-		//´ÓÈÝÆ÷ÖÐ»ñµÃÓÊ¼þ·¢ËÍ¶ÔÏó
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½
 		MailSender mSender=(MailSender) aContext.getBean("mailSender");
 		mSender.sendMail("245695121@qq.com");
 	}

@@ -1,4 +1,4 @@
-package com.baobaotao.demo.testAop;
+package test.baobaotao.demo.testAop;
 
 public class MethodPerformance {
 	private long begin;
@@ -12,6 +12,6 @@ public class MethodPerformance {
 	public void printPerformance(){
 		end=System.currentTimeMillis();
 		long takes=end-begin;
-		System.out.println(serviceMethod+"»¨·ÑÁË:"+takes+"ºÁÃë£¡");
+		System.out.println(serviceMethod+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:"+takes+"ï¿½ï¿½ï¿½ë£¡");
 	}
 }

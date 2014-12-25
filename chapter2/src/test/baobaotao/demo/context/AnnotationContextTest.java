@@ -1,4 +1,4 @@
-package com.baobaotao.demo.context;
+package test.baobaotao.demo.context;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -7,7 +7,7 @@ import com.baobaotao.reflect.Car;
 
 public class AnnotationContextTest {
 	public static void main(String[] args) {
-		//Í¨¹ýÒ»¸öpojo×°ÔØbeanÅäÖÃ
+		//Í¨ï¿½ï¿½Ò»ï¿½ï¿½pojo×°ï¿½ï¿½beanï¿½ï¿½ï¿½ï¿½
 		ApplicationContext context=new AnnotationConfigApplicationContext(BeanContext.class);
 		Car car=(Car) context.getBean("car",Car.class);
 		System.out.print(car.getBrand());

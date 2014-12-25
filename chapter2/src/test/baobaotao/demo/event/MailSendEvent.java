@@ -1,4 +1,4 @@
-package com.baobaotao.demo.event;
+package test.baobaotao.demo.event;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.event.ApplicationContextEvent;

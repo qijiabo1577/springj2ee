@@ -1,4 +1,4 @@
-package com.baobaotao.demo.resource;
+package test.baobaotao.demo.resource.copy;
 
 import java.io.IOException;
 

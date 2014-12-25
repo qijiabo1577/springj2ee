@@ -1,4 +1,4 @@
-package com.baobaotao.demo.event;
+package test.baobaotao.demo.event;
 
 import org.springframework.context.ApplicationListener;
 
@@ -6,6 +6,6 @@ public class MailSendListener implements ApplicationListener<MailSendEvent>{
 
 	public void onApplicationEvent(MailSendEvent mse) {
 		MailSendEvent event=(MailSendEvent) mse;
-		System.out.println("MailSendEventÏò£º"+event.getTo()+"·¢ËÍÍêÒ»·âEmail£¡");
+		System.out.println("MailSendEventï¿½ï¿½"+event.getTo()+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Emailï¿½ï¿½");
 	}
 }

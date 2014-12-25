@@ -1,4 +1,4 @@
-package com.baobaotao.demo.event;
+package test.baobaotao.demo.event;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -13,9 +13,9 @@ public class MailSender implements ApplicationContextAware{
 	}
 	
 	public void sendMail(String to){
-		System.out.println("Ä£Äâ·¢ËÍÒ»¸öMail~");
+		System.out.println("Ä£ï¿½â·¢ï¿½ï¿½Ò»ï¿½ï¿½Mail~");
 		MailSendEvent mse=new MailSendEvent(this.ctx,to);
-		//ÏòÈİÆ÷ÖĞËùÓĞ¼àÌıÆ÷·¢ËÍÊÂ¼ş
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 		ctx.publishEvent(mse);
 	}
 }

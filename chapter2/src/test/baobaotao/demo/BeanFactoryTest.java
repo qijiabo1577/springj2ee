@@ -1,4 +1,4 @@
-package com.baobaotao.demo.beanFactory;
+package test.baobaotao.demo;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
