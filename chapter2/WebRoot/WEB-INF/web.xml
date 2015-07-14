@@ -38,8 +38,9 @@
 	<!-- spring MVC处理的URL -->
 	<servlet-mapping>
 		<servlet-name>baobaotao</servlet-name>
-		<url-pattern>*.html</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
+	
 	
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
