@@ -22,12 +22,10 @@
  	<context:component-scan base-package="com.baobaotao.service"/>
  	<context:component-scan base-package="com.baobaotao.domain"/>
  	
- 	
  	<!--加入jdbc配置文件 -->
  	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" 
 	 	p:location="classpath:jdbc.properties"
 	 	p:fileEncoding="utf-8"/>
- 	
  	
  	<!-- 定义使用  DBCP实现的数据源 -->
  	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -41,6 +39,7 @@
  	<!--定义Jdbc模板  -->
  	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" 
  		p:dataSource-ref="dataSource"/>  
+ 		
  	
  	<!-- 通过aop配置提供事务增强，让service包下所有的bean方法都拥有事务 -->
  	<aop:config proxy-target-class="true">
