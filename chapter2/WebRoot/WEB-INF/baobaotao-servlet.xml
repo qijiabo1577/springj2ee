@@ -1,29 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:context="http://www.springframework.org/schema/context" 
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
  		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
  		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
  		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
  		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
  		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
- 		"
- 		>
- 	<!-- 扫描web包 ，应用Spring的注解 -->
-	<context:component-scan base-package="com.baobaotao.web"></context:component-scan>
-	
-	<!-- 配置视图解析器，将ModelAndView及字符串解析为具体的内容 -->
-	<bean 
+ 		">
+ 		
+ 	<!-- 注解驱动 -->
+ 	<mvc:annotation-driven />  
+	<!-- 扫描web包 ，应用Spring的注解 -->
+	<context:component-scan base-package="api"></context:component-scan>
+
+		<!-- 配置视图解析器，将ModelAndView及字符串解析为具体的内容 -->
+		 <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:viewClass="org.springframework.web.servlet.view.JstlView"
-		p:prefix="/WEB-INF/jsp/"
-		p:suffix=".jsp"/>
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+
+		<!-- 这里是否忽略掉accept header，默认就是false -->
+		<property name="ignoreAcceptHeader" value="true" />
+
+		<!-- 如果所有的mediaType都没匹配上，就会使用defaultContentType -->
+		<property name="defaultContentType" value="text/html" />
+
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+			</map>
+		</property>
+		<!-- 默认使用MappingJacksonJsonView生成jsonview-->
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+					<property name="extractValueFromSingleKeyModel" value="true" />
+				</bean>
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+					<property name="marshaller">
+						<bean class="org.springframework.oxm.xstream.XStreamMarshaller" />
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
 </beans>
  	

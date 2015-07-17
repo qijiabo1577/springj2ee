@@ -8,8 +8,8 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 
 import com.baobaotao.reflect.Car;
 
+@SuppressWarnings("deprecation")
 public class BeanFactoryTest {
-	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		ResourcePatternResolver resolver=new PathMatchingResourcePatternResolver();
 		Resource res=resolver.getResource("classpath:com/baobaotao/demo/beanFactory/beans.xml");
