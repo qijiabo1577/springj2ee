@@ -3,7 +3,6 @@ package test.baobaotao.demo.event;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.event.ApplicationContextEvent;
 
 public class MailSender implements ApplicationContextAware{
 	private ApplicationContext ctx;
