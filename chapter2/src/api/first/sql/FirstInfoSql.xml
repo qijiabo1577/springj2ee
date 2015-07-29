@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="api.first.dao.FirstInfoDao">
 	<select id="getSysUserById" parameterType="java.lang.String"
-		resultType="api.first.model.SysUser">
+		resultType="SysUser">
 		select 
 			id as id,
 			username as userName

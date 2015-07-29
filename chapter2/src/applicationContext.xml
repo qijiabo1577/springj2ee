@@ -36,10 +36,10 @@
  		p:password="${password}"
  		/>
  		
- 	<!--定义Jdbc模板  
+ 	<!--定义Jdbc模板  -->
  	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" 
  		p:dataSource-ref="dataSource"/>  
- 		-->
+ 		
  	
  	<!-- 通过aop配置提供事务增强，让service包下所有的bean方法都拥有事务
  	<aop:config proxy-target-class="true">

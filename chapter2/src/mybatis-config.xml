@@ -3,22 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-<!--  
 	<typeAliases>
-		<typeAlias alias="SysUser" type="com.hisign.model.SysUser"/>
-		<typeAlias alias="UserFilter" type="com.hisign.system.users.model.UserFilter"/>
-		<typeAlias alias="CbaAddFilter" type="com.hisign.cba.cbaAdd.model.CbaAddFilter"/>
-		<typeAlias alias="TCBaseFilter" type="com.hisign.yct.yctaj.model.TCBaseFilter"/>
-		<typeAlias alias="TPBaseFilter" type="com.hisign.yct.yctry.model.TPBaseFilter"/>
-		<typeAlias alias="JsrdFilter" type="com.hisign.jsrd.model.JsrdFilter"/>
-		
-		<typeAlias alias="SysRole" type="com.hisign.model.SysRole"/>
-		<typeAlias alias="RoleFilter" type="com.hisign.system.role.model.RoleFilter"/>	
-		
-		<typeAlias alias="SysDict" type="com.hisign.model.SysDict"/>
-		<typeAlias alias="SysParam" type="com.hisign.model.SysParam"/>
-		
-			
+		<typeAlias alias="SysUser" type="api.first.model.SysUser"/>
 	</typeAliases>
-	-->
 </configuration>

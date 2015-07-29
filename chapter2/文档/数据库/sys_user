@@ -1,0 +1,68 @@
+-- Create table
+create table SYS_USER
+(
+  ID              CHAR(32) not null,
+  USERNAME        VARCHAR2(75) not null,
+  PASSWORD        VARCHAR2(75),
+  TRUE_NAME       VARCHAR2(150),
+  USER_LEVEL      CHAR(1) not null,
+  OPEN_FLAG       VARCHAR2(4) not null,
+  DEFAULT_MODULE  VARCHAR2(4) not null,
+  REMARK          VARCHAR2(3000),
+  CREATE_USER     VARCHAR2(50) not null,
+  CREATE_DATETIME DATE not null,
+  UPDATE_USER     VARCHAR2(50),
+  UPDATE_DATETIME DATE,
+  POLICE_ID       CHAR(6),
+  CARD_ID         VARCHAR2(18),
+  USER_TEL        VARCHAR2(100),
+  USER_UNIT       CHAR(12),
+  IP              VARCHAR2(75),
+  IFIP            CHAR(1) default 0,
+  REV1            VARCHAR2(2000),
+  REV2            VARCHAR2(2000),
+  REV3            VARCHAR2(2000),
+  REV4            VARCHAR2(2000)
+)
+tablespace YPPTSPACE
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    next 1
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column SYS_USER.IFIP
+  is '该账户是否与IP绑定登录';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table SYS_USER
+  add constraint PK_SYS_USER primary key (ID)
+  using index 
+  tablespace YPPTSPACE
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Create/Recreate indexes 
+create unique index IX_USER_NAME on SYS_USER (USERNAME)
+  tablespace YPPTSPACE
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
