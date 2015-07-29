@@ -1,5 +1,7 @@
 package api.first.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -25,6 +27,13 @@ public class FirstAction {
 	public SysUser sayHello(@PathVariable String id) throws InterruptedException {
 		SysUser user=firstInfoManager.getSysUserById(id);
 		return user;
+	}
+	
+	@RequestMapping(value = "/helloAll", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+	@ResponseBody
+	public List<SysUser> helloToAll() throws InterruptedException {
+		List<SysUser> users=firstInfoManager.getAllSysUsersByRowNum(5);
+		return users;
 	}
 
 }

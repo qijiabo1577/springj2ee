@@ -9,4 +9,14 @@
 		from sys_user
 		where id=#{id,jdbcType=VARCHAR}
 	</select>
+	
+	<select id="getAllSysUsersByRowNum" parameterType="java.lang.Integer"
+		resultType="SysUser">
+		select 
+			id as id,
+			username as userName
+		from sys_user
+		where rownum <![CDATA[<=]]> #{num,jdbcType=VARCHAR}
+	</select>
+	
 </mapper>

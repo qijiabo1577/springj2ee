@@ -1,5 +1,7 @@
 package api.first.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -15,5 +17,9 @@ public class FirstInfoManagerImpl implements FirstInfoManager{
 	
 	public SysUser getSysUserById(String id){
 		return firstdao.getSysUserById(id);
+	}
+
+	public List<SysUser> getAllSysUsersByRowNum(int num){
+		return firstdao.getAllSysUsersByRowNum(num);
 	}
 }
