@@ -1,5 +1,7 @@
 package api.first.model;
 
+import org.springframework.util.StringUtils;
+
 public class SysUser {
 	private String id;
 	private String userName;
@@ -12,13 +14,13 @@ public class SysUser {
 		this.id = id;
 	}
 	public String getUserName() {
-		return userName;
+		return StringUtils.isEmpty(userName)?"":userName;
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 	public String getPhoneNum() {
-		return phoneNum;
+		return StringUtils.isEmpty(phoneNum)?"":userName;
 	}
 	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;

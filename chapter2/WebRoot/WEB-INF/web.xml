@@ -33,7 +33,7 @@
 	
 	<!-- springMVC主控Servlet -->
 	<servlet>
-		<servlet-name>baobaotao</servlet-name>
+		<servlet-name>main</servlet-name>
 		<servlet-class>
 			org.springframework.web.servlet.DispatcherServlet
 		</servlet-class>
@@ -42,7 +42,7 @@
 
 	<!-- spring MVC处理的URL -->
 	<servlet-mapping>
-		<servlet-name>baobaotao</servlet-name>
+		<servlet-name>main</servlet-name>
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 	

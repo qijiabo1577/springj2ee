@@ -18,11 +18,13 @@
 	<!-- 扫描web包 ，应用Spring的注解 -->
 	<context:component-scan base-package="api"></context:component-scan>
 
-		<!-- 配置视图解析器，将ModelAndView及字符串解析为具体的内容 -->
-		 <bean
+	<!-- 配置视图解析器，将ModelAndView及字符串解析为具体的内容
+	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:viewClass="org.springframework.web.servlet.view.JstlView"
 		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
+		 -->
+		 
 	<bean
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 
@@ -35,7 +37,6 @@
 		<property name="mediaTypes">
 			<map>
 				<entry key="json" value="application/json" />
-				<entry key="xml" value="application/xml" />
 			</map>
 		</property>
 		<!-- 默认使用MappingJacksonJsonView生成jsonview-->
