@@ -6,7 +6,7 @@
 		select 
 			id as id,
 			username as userName
-		from sys_user
+		from t_user
 		where id=#{id,jdbcType=VARCHAR}
 	</select>
 	
@@ -15,8 +15,8 @@
 		select 
 			id as id,
 			username as userName
-		from sys_user
-		where rownum <![CDATA[<=]]> #{num,jdbcType=VARCHAR}
+		from t_user
+		where 1=1
 	</select>
 	
 </mapper>
