@@ -28,7 +28,12 @@ public class FirstAction {
 		SysUser user=firstInfoManager.getSysUserById(id);
 		return user;
 	}
-	
+
+	/**
+	 * µÚÒ»¸ö²âÊÔ
+	 * @return
+	 * @throws InterruptedException
+	 */
 	@RequestMapping(value = "/helloAll", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
 	@ResponseBody
 	public List<SysUser> helloToAll() throws InterruptedException {
